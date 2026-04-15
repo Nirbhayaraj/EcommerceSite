@@ -6,6 +6,23 @@ import { toast } from 'react-toastify';
 
 export const ShopContext = createContext();
 
+const normalizeProducts = (products) => {
+  if (Array.isArray(products)) {
+    return products;
+  }
+
+  if (typeof products === 'string') {
+    try {
+      const parsedProducts = JSON.parse(products);
+      return Array.isArray(parsedProducts) ? parsedProducts : [];
+    } catch {
+      return [];
+    }
+  }
+
+  return [];
+};
+
 const ShopContextProvider = ({ children }) => {
   const currency = '\u20B9';
   const delivery_fee = 10;
@@ -30,7 +47,7 @@ const ShopContextProvider = ({ children }) => {
     try {
       const response = await axios.get(`${backendUrl}/api/product/list`);
       if (response.data.success) {
-        setProducts(response.data.products || []);
+        setProducts(normalizeProducts(response.data.products));
       } else {
         toast.dismiss();
         toast.error(response.data.message || 'Failed to load products');
