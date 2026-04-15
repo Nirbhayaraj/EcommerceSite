@@ -43,8 +43,8 @@ Set Up Environment Variables:
 In the backend folder, create a .env file with the following:
 
 
-ADMIN_EMAIL=aryan32@gmail.com
-ADMIN_PASSWORD=aryan123
+ADMIN_EMAIL = admin@gmail.com
+ADMIN_PASSWORD = admin123
 
 In the frontend folder, create a .env file with:
 
