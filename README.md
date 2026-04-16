@@ -11,9 +11,7 @@ Objectives:
  Simplify order management and inventory tracking for admins.
  Offer secure authentication and payment methods.
 
-Project URLs
- Frontend (Customer-Facing Store): https://ecommerce-frontend-two-alpha.vercel.app/login
- Admin Dashboard: https://ecommerce-admin-rose-xi.vercel.app/add
+
 
 Setup Instructions
 Prerequisites:
